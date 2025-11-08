@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-      optimizeCss: true,
-    },
+    // Remove the experimental optimizeCss option for now
     compress: true,
     poweredByHeader: false,
     generateEtags: false,

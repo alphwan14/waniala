@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
@@ -6,20 +6,22 @@ import ToastProvider from '@/components/ToastProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// Separate viewport configuration
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: '#0ea5e9',
+}
+
 export const metadata: Metadata = {
   title: 'Waniala - Business Management System',
   description: 'Track your Posho Mill and Rental income with ease',
   manifest: '/site.webmanifest',
-  themeColor: '#0ea5e9',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
     title: 'Waniala Business Manager',
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
   },
   icons: {
     icon: [
@@ -34,12 +36,6 @@ export const metadata: Metadata = {
       { url: '/apple-touch-icon-167x167.png', sizes: '167x167', type: 'image/png' },
       { url: '/apple-touch-icon-180x180.png', sizes: '180x180', type: 'image/png' },
     ],
-    other: [
-      {
-        rel: 'apple-touch-icon-precomposed',
-        url: '/apple-touch-icon.png',
-      },
-    ],
   },
 }
 
@@ -50,10 +46,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      </head>
       <body className={inter.className}>
         <ToastProvider>
           <Navigation />

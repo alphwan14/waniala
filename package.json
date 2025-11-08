@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "critters": "^0.0.23",
     "next": "14.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
